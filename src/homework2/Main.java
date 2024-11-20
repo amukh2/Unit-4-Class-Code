@@ -1,7 +1,5 @@
 package homework2;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -9,18 +7,18 @@ public class Main {
         System.out.println();
         vowelCounter("aaeeeeiiiioouuuu");
         System.out.println();
-//        palindromeChecker("level");
-//        System.out.println();
-//        palindromeChecker("abcde");
-//        System.out.println();
-//        palindromeChecker("racecar");
-//        System.out.println();
-//        palindromeChecker("aBbA");
-//        System.out.println();
-//        //extra credit
-//        palindromeChecker("s*dfj*js");
-//        System.out.println();
-//        palindromeChecker("jf&fj");
+       palindromeChecker("level");
+       System.out.println();
+       palindromeChecker("abcde");
+       System.out.println();
+       palindromeChecker("racecar");
+       System.out.println();
+       palindromeChecker("aBbA");
+       System.out.println();
+       //extra credit
+       palindromeChecker("s*dfj*js");
+       System.out.println();
+       palindromeChecker("jf&fj");
 
     }
 
@@ -51,15 +49,28 @@ public class Main {
                 Number of i's: %d
                 Number of o's: %d 
                 Number of u's: %d
-                
                 """, countA, countE, countI, countO, countU);
     }
 
     public static void palindromeChecker(String str) {
+        boolean palindrome = true;
+        boolean valid = true;
         for (int i = 0; i < str.length(); i++) {
-            if (Character.isDigit(str.charAt(i)) && Character.isLetter(str.charAt(i))) {
-
+            if (Character.isDigit(str.charAt(i)) || Character.isLetter(str.charAt(i))) {
+                if (!(str.toLowerCase().charAt(i) == str.toLowerCase().charAt(str.length() - (i+1)))) { 
+                    palindrome = false;
+                    break;
+                } 
+            } else {
+                System.out.println("Error: Invalid character detected in " + str);
+                valid = false;
+                break;
             }
+        }
+        if (palindrome == true && valid == true){
+            System.out.println(str + " is a palindrome.");
+        } else if (palindrome == false && valid == true){ 
+            System.out.println(str + " is not a palindrome.");
         }
     }
 }
