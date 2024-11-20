@@ -1,6 +1,6 @@
 package homework2;
 
-public class Main {
+public class Unit4HW2 {
 
     public static void main(String[] args) {
         vowelCounter("The quick brown fox jumped over the lazy dog.");
