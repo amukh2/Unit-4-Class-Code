@@ -47,7 +47,7 @@ public class Main {
                 Number of a's: %d
                 Number of e's: %d
                 Number of i's: %d
-                Number of o's: %d 
+                Number of o's: %d
                 Number of u's: %d
                 """, countA, countE, countI, countO, countU);
     }
@@ -67,9 +67,9 @@ public class Main {
                 break;
             }
         }
-        if (palindrome == true && valid == true){
+        if (palindrome && valid){
             System.out.println(str + " is a palindrome.");
-        } else if (palindrome == false && valid == true){ 
+        } else if (!palindrome && valid){
             System.out.println(str + " is not a palindrome.");
         }
     }
