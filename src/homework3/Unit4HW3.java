@@ -2,14 +2,14 @@ package homework3;
 import java.util.Scanner;
 public class Unit4HW3 {
     public static void main(String []args){
-        String secretWord = "ARBOR";
+        String secretWord = "HUTCH";
         System.out.println("------- WOODLE-------- ");
         Woodle(secretWord);
     }
     public static void Woodle(String answer){
         Scanner sc = new Scanner(System.in);
         System.out.println("Guess a 5 letter word:");
-        String input = sc.nextLine();
+        String input = sc.nextLine().substring(0,5);
         int green = 0;
         int yellow = 0;
         int index = 0;
@@ -31,7 +31,7 @@ public class Unit4HW3 {
            green = 0;
            yellow = 0;
            System.out.println("Guess a 5 letter word:");
-           input = sc.nextLine();
+           input = sc.nextLine().substring(0,5);
        }
        index+=1;
         System.out.printf("Congratulations. It took you %d tries", index);
